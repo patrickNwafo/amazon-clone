@@ -3,7 +3,7 @@ import { FaSearch } from "react-icons/fa";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { AiOutlineMenu } from "react-icons/ai";
 
-const Header = () => {
+function Header() {
   return (
     <header>
       {/* Top nav  */}
@@ -68,6 +68,6 @@ const Header = () => {
       </div>
     </header>
   );
-};
+}
 
 export default Header;
