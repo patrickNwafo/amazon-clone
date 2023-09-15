@@ -8,15 +8,25 @@ function Header() {
     <header>
       {/* Top nav  */}
       <div className="flex items-center bg-amazon_blue p-1 flex-grow py-2">
-        <div className="mt-2 flex items-center flex-grow sm:flex-grow-0">
+        <div className=" mt-2 mx-2 flex items-center flex-grow sm:flex-grow-0">
           <Image
+            // onClick={() => router.push("/")}
             src="https://links.papareact.com/f90"
             width={150}
             height={40}
-            objectFit="contain"
-            className="cursor-pointer"
+            alt="logo"
+            className=" cursor-pointer h-[30px] w-[100px] px-1"
           />
         </div>
+        {/* <div className="mt-2 flex items-center flex-grow sm:flex-grow-0 w-[200px] h-[100px]">
+          <Image
+            src="https://links.papareact.com/f90"
+            width="200"
+            height="200"
+            className="cursor-pointer h-auto w-auto object-contain"
+            priority={true}
+          />
+        </div> */}
 
         {/* Search  */}
         <div className="hidden sm:flex items-center h-10 rounded-md flex-grow cursor-pointer bg-yellow-400 hover:bg-yellow-500">
@@ -44,7 +54,7 @@ function Header() {
               0
             </span>
 
-            <AiOutlineShoppingCart className="h-10" />
+            <AiOutlineShoppingCart className="h-10" size={25} />
             <p className="hidden md:inline font-extrabold md:text-sm">Basket</p>
           </div>
         </div>
@@ -53,7 +63,7 @@ function Header() {
       {/* Bottom nav  */}
       <div className="flex items-center space-x-3 p-2 pl-6 bg-amazon_blue-light text-white text-sm">
         <p className="link flex items-center">
-          <AiOutlineMenu className="h-6 mr-1" />
+          <AiOutlineMenu className="h-6 mr-1" size={20} />
           All
         </p>
         <p className="link">Prime Video</p>
