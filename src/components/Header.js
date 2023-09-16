@@ -2,8 +2,11 @@ import Image from "next/image";
 import { FaSearch } from "react-icons/fa";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { AiOutlineMenu } from "react-icons/ai";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 function Header() {
+  const { data: session } = useSession();
+
   return (
     <header>
       {/* Top nav  */}
@@ -11,6 +14,7 @@ function Header() {
         <div className=" mt-2 mx-2 flex items-center flex-grow sm:flex-grow-0">
           <Image
             // onClick={() => router.push("/")}
+
             src="https://links.papareact.com/f90"
             width={150}
             height={40}
@@ -39,8 +43,13 @@ function Header() {
 
         {/* Right */}
         <div className="text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap">
-          <div className="link">
-            <p>Hello Ricky Smallz</p>
+          <div
+            className=" cursor-pointer link"
+            onClick={!session ? signIn : signOut}
+          >
+            <p className="hover:underline">
+              {session ? `Hello, ${session.user.name}` : "Sign In"}
+            </p>
             <p className="font-extrabold md:text-sm">Account & Lists</p>
           </div>
 
